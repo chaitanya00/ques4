@@ -21,7 +21,7 @@ resource "aws_iam_instance_profile" "test-profile" {
 }
 resource "aws_iam_role_policy" "test-policy" {
   name = "s3-test-policy"
- 
+  role = "${aws_iam_role.test-role.id}" 
   policy = "${var.policy}"
 }
 resource "aws_iam_role" "test-role" {
